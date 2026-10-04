@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: GeminiSpringBootIntegration
+
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_GEMINI_KEY}
+        chat:
+          model: gemini-3.5-flash
