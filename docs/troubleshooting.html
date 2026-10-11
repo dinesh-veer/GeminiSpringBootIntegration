@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Troubleshooting documentation for GeminiSpringBootIntegration">
+  <title>Troubleshooting | GeminiSpringBootIntegration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">GeminiSpringBootIntegration</a>
+    <a href="index.html">Home</a>
+<a href="getting-started.html">Getting Started</a>
+<a href="architecture.html">Architecture</a>
+<a href="gemini-chat.html">Gemini Chat</a>
+<a href="configuration.html">Configuration</a>
+<a href="examples.html">Examples</a>
+<a href="troubleshooting.html" aria-current="page">Troubleshooting</a>
+  </nav>
+</header>
+<main class="container">
+
+<h1>Troubleshooting</h1>
+
+<h2>API Key Not Found</h2>
+<p>If the application cannot authenticate with Gemini, verify that the environment variable is set.</p>
+<pre><code>echo $GOOGLE_GEMINI_KEY</code></pre>
+
+<p>Then restart the application after exporting the variable.</p>
+
+<h2>Wrong Model Configuration</h2>
+<p>
+  Verify that the model configuration matches the repository:
+</p>
+<pre><code>spring:
+  ai:
+    google:
+      genai:
+        chat:
+          model: gemini-3.5-flash</code></pre>
+
+<h2>Maven Build Problems</h2>
+<p>Try a clean build:</p>
+<pre><code>./mvnw clean package</code></pre>
+
+<h2>Java Version</h2>
+<p>
+  The repository explicitly configures Java 21. Verify your active Java version:
+</p>
+<pre><code>java -version</code></pre>
+
+<h2>Dependency Problems</h2>
+<p>
+  The project uses Spring Boot 4.1.0 and Spring AI 2.0.0. If dependencies are
+  resolved from an unexpected version, check the Maven parent and Spring AI BOM
+  versions in <code>pom.xml</code>.
+</p>
+
+</main>
+<footer class="site-footer">
+  GeminiSpringBootIntegration · Spring Boot + Spring AI + Google Gemini<br>
+  <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration">GitHub Repository</a>
+  · <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration/issues">Issues</a>
+  · MIT License
+</footer>
+</body>
+</html>
