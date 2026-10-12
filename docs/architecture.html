@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Architecture documentation for GeminiSpringBootIntegration">
+  <title>Architecture | GeminiSpringBootIntegration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">GeminiSpringBootIntegration</a>
+    <a href="index.html">Home</a>
+<a href="getting-started.html">Getting Started</a>
+<a href="architecture.html" aria-current="page">Architecture</a>
+<a href="gemini-chat.html">Gemini Chat</a>
+<a href="configuration.html">Configuration</a>
+<a href="examples.html">Examples</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+  </nav>
+</header>
+<main class="container">
+
+<h1>Architecture</h1>
+
+<h2>Overview</h2>
+<p>
+  The application is a Spring Boot service that uses Spring AI as the integration
+  layer between application code and Google's Gemini model.
+</p>
+
+<h2>Components</h2>
+<div class="card-grid">
+  <div class="card">
+    <h3>Spring Boot Application</h3>
+    <p>Provides the application runtime and dependency injection environment.</p>
+  </div>
+  <div class="card">
+    <h3>Spring AI</h3>
+    <p>Provides the abstraction used to integrate the application with the AI model.</p>
+  </div>
+  <div class="card">
+    <h3>Google GenAI Starter</h3>
+    <p>Provides Spring Boot integration for Google's GenAI/Gemini model.</p>
+  </div>
+  <div class="card">
+    <h3>Gemini Model</h3>
+    <p>The configured chat model is <code>gemini-3.5-flash</code>.</p>
+  </div>
+</div>
+
+<h2>Request Flow</h2>
+<pre><code>Application Request
+        |
+        v
+Spring Boot Application
+        |
+        v
+Spring AI
+        |
+        v
+Google GenAI Integration
+        |
+        v
+Gemini Chat Model
+        |
+        v
+Generated Response</code></pre>
+
+<h2>Configuration Flow</h2>
+<pre><code>GOOGLE_GEMINI_KEY
+        |
+        v
+application.yml
+        |
+        v
+Spring AI Google GenAI configuration
+        |
+        v
+Gemini chat model</code></pre>
+
+<h2>Design Goal</h2>
+<p>
+  The project keeps the Gemini integration inside the Spring Boot application
+  while using Spring AI to avoid coupling application code directly to low-level
+  provider API calls.
+</p>
+
+</main>
+<footer class="site-footer">
+  GeminiSpringBootIntegration · Spring Boot + Spring AI + Google Gemini<br>
+  <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration">GitHub Repository</a>
+  · <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration/issues">Issues</a>
+  · MIT License
+</footer>
+</body>
+</html>
