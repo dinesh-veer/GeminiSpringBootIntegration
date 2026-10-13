@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Configuration documentation for GeminiSpringBootIntegration">
+  <title>Configuration | GeminiSpringBootIntegration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">GeminiSpringBootIntegration</a>
+    <a href="index.html">Home</a>
+<a href="getting-started.html">Getting Started</a>
+<a href="architecture.html">Architecture</a>
+<a href="gemini-chat.html">Gemini Chat</a>
+<a href="configuration.html" aria-current="page">Configuration</a>
+<a href="examples.html">Examples</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+  </nav>
+</header>
+<main class="container">
+
+<h1>Configuration</h1>
+
+<h2>Application Configuration</h2>
+<p>The project uses <code>src/main/resources/application.yml</code>.</p>
+
+<pre><code>spring:
+  application:
+    name: GeminiSpringBootIntegration
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_GEMINI_KEY}
+        chat:
+          model: gemini-3.5-flash</code></pre>
+
+<h2>Configuration Properties</h2>
+<table>
+<tr><th>Property</th><th>Value</th><th>Description</th></tr>
+<tr>
+  <td><code>spring.application.name</code></td>
+  <td>GeminiSpringBootIntegration</td>
+  <td>Spring Boot application name</td>
+</tr>
+<tr>
+  <td><code>spring.ai.google.genai.api-key</code></td>
+  <td><code>${GOOGLE_GEMINI_KEY}</code></td>
+  <td>Reads the Gemini API key from an environment variable</td>
+</tr>
+<tr>
+  <td><code>spring.ai.google.genai.chat.model</code></td>
+  <td><code>gemini-3.5-flash</code></td>
+  <td>Gemini chat model configured by the repository</td>
+</tr>
+</table>
+
+<h2>Environment Variable</h2>
+<pre><code>export GOOGLE_GEMINI_KEY="your-gemini-api-key"</code></pre>
+
+<h2>Maven Configuration</h2>
+<p>
+  The repository uses Spring Boot <code>4.1.0</code>, Java
+  <code>21</code>, and Spring AI <code>2.0.0</code>.
+</p>
+
+<pre><code>&lt;properties&gt;
+    &lt;java.version&gt;21&lt;/java.version&gt;
+    &lt;spring-ai.version&gt;2.0.0&lt;/spring-ai.version&gt;
+&lt;/properties&gt;</code></pre>
+
+<h2>Dependencies</h2>
+<ul>
+  <li><code>spring-boot-starter-webmvc</code></li>
+  <li><code>spring-ai-starter-model-google-genai</code></li>
+  <li>Lombok (optional)</li>
+  <li>Spring Boot web MVC test starter for tests</li>
+</ul>
+
+</main>
+<footer class="site-footer">
+  GeminiSpringBootIntegration · Spring Boot + Spring AI + Google Gemini<br>
+  <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration">GitHub Repository</a>
+  · <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration/issues">Issues</a>
+  · MIT License
+</footer>
+</body>
+</html>
