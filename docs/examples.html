@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Examples documentation for GeminiSpringBootIntegration">
+  <title>Examples | GeminiSpringBootIntegration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">GeminiSpringBootIntegration</a>
+    <a href="index.html">Home</a>
+<a href="getting-started.html">Getting Started</a>
+<a href="architecture.html">Architecture</a>
+<a href="gemini-chat.html">Gemini Chat</a>
+<a href="configuration.html">Configuration</a>
+<a href="examples.html" aria-current="page">Examples</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+  </nav>
+</header>
+<main class="container">
+
+<h1>Examples</h1>
+
+<h2>1. Configure Gemini</h2>
+<p>Set the API key before starting the application:</p>
+<pre><code>export GOOGLE_GEMINI_KEY="your-gemini-api-key"</code></pre>
+
+<h2>2. Select the Gemini Chat Model</h2>
+<pre><code>spring:
+  ai:
+    google:
+      genai:
+        chat:
+          model: gemini-3.5-flash</code></pre>
+
+<h2>3. Build and Run</h2>
+<pre><code>./mvnw clean package
+./mvnw spring-boot:run</code></pre>
+
+<h2>Integration Concept</h2>
+<pre><code>Java Application
+      |
+      v
+Spring Boot
+      |
+      v
+Spring AI
+      |
+      v
+Google GenAI
+      |
+      v
+Gemini 3.5 Flash
+      |
+      v
+Chat Response</code></pre>
+
+<h2>Extending the Example</h2>
+<p>
+  This project can serve as a starting point for adding application-specific
+  controllers, prompts, structured responses, conversation memory, tools, or
+  other Spring AI capabilities. Those extensions are outside the functionality
+  explicitly documented by the current repository README.
+</p>
+
+</main>
+<footer class="site-footer">
+  GeminiSpringBootIntegration · Spring Boot + Spring AI + Google Gemini<br>
+  <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration">GitHub Repository</a>
+  · <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration/issues">Issues</a>
+  · MIT License
+</footer>
+</body>
+</html>
