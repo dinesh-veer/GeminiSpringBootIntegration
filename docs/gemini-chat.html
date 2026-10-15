@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gemini Chat documentation for GeminiSpringBootIntegration">
+  <title>Gemini Chat | GeminiSpringBootIntegration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">GeminiSpringBootIntegration</a>
+    <a href="index.html">Home</a>
+<a href="getting-started.html">Getting Started</a>
+<a href="architecture.html">Architecture</a>
+<a href="gemini-chat.html" aria-current="page">Gemini Chat</a>
+<a href="configuration.html">Configuration</a>
+<a href="examples.html">Examples</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+  </nav>
+</header>
+<main class="container">
+
+<h1>Gemini Chat</h1>
+
+<h2>Gemini Model</h2>
+<p>
+  The repository configures the Gemini chat model as:
+</p>
+<pre><code>gemini-3.5-flash</code></pre>
+
+<h2>Spring AI Integration</h2>
+<p>
+  The project includes the Spring AI Google GenAI starter:
+</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.ai&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-ai-starter-model-google-genai&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+
+<p>
+  Spring AI provides the application-level integration while the Google GenAI
+  integration communicates with the configured Gemini model.
+</p>
+
+<h2>Configuration</h2>
+<pre><code>spring:
+  application:
+    name: GeminiSpringBootIntegration
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_GEMINI_KEY}
+        chat:
+          model: gemini-3.5-flash</code></pre>
+
+<h2>What This Example Demonstrates</h2>
+<ul>
+  <li>Adding the Spring AI Google GenAI starter to a Spring Boot application.</li>
+  <li>Externalizing the Gemini API key through an environment variable.</li>
+  <li>Selecting a Gemini chat model through Spring Boot configuration.</li>
+  <li>Using Spring AI as the integration layer for Gemini chat services.</li>
+</ul>
+
+<div class="callout">
+  The repository's public README does not specify the controller class or a
+  public HTTP endpoint. The documentation therefore focuses on the verified
+  integration and configuration rather than assuming an endpoint contract.
+</div>
+
+</main>
+<footer class="site-footer">
+  GeminiSpringBootIntegration · Spring Boot + Spring AI + Google Gemini<br>
+  <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration">GitHub Repository</a>
+  · <a href="https://github.com/dinesh-veer/GeminiSpringBootIntegration/issues">Issues</a>
+  · MIT License
+</footer>
+</body>
+</html>
